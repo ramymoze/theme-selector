@@ -94,7 +94,6 @@ export default function AdminLogin() {
         
         <div className="mt-6 text-center">
           <p className="text-xs text-slate-400">
-            Default password: <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-600">admin123</code>
           </p>
         </div>
       </div>

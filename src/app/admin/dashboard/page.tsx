@@ -235,6 +235,7 @@ export default function AdminDashboard() {
                           {sub.members.map((member, idx) => (
                             <span key={idx} className="inline-flex items-center px-2.5 py-0.5 rounded text-sm font-medium bg-white text-slate-700">
                               {member.name   }
+                               <br>
                             </span>
                           ))}
                         </div>

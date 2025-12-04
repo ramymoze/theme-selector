@@ -279,7 +279,8 @@ export default function AdminDashboard() {
                         <div className="flex flex-wrap gap-2">
                           {sub.members.map((member, idx) => (
                             <span key={idx} className="inline-flex items-center px-2.5 py-0.5 rounded text-sm font-medium bg-white text-slate-700">
-                              {member.name}
+                              {member.name   }
+                               <br>
                             </span>
                           ))}
                         </div>

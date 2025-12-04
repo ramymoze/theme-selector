@@ -68,6 +68,42 @@ export default function AdminDashboard() {
     router.push('/admin');
   };
 
+  const downloadCSV = () => {
+    // Prepare CSV headers
+    const headers = ['Group', 'Names', 'Theme'];
+    
+    // Prepare CSV rows
+    const rows = filteredSubmissions.map(sub => {
+      // Use comma for separating names since we'll use semicolon for CSV delimiter
+      const memberNames = sub.members.map(m => m.name).join(', ');
+      
+      return [
+        `Group ${sub.group_number}`,
+        memberNames,
+        getThemeName(sub.theme_id)
+      ];
+    });
+    
+    // Combine headers and rows with semicolon delimiter (better for Excel in many regions)
+    const csvContent = [
+      headers.join(';'),
+      ...rows.map(row => row.map(cell => `"${cell}"`).join(';'))
+    ].join('\n');
+    
+    // Create blob with BOM for Excel and download
+    const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', `submissions_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const getThemeName = (themeId: string) => {
     return themes.find(t => t.id === themeId)?.name || themeId;
   };
@@ -117,9 +153,18 @@ export default function AdminDashboard() {
               Monitor theme selections
             </p>
           </div>
-          <button onClick={handleLogout} className="btn-secondary text-sm">
-            Logout
-          </button>
+          <div className="flex gap-3">
+            <button 
+              onClick={downloadCSV} 
+              className="btn-primary text-sm"
+              disabled={filteredSubmissions.length === 0}
+            >
+              📥 Download CSV
+            </button>
+            <button onClick={handleLogout} className="btn-secondary text-sm">
+              Logout
+            </button>
+          </div>
         </div>
 
         {/* Statistics */}

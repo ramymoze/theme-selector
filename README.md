@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Next.js Theme Selector
 
-## Getting Started
+A **Next.js Theme Selector** built to make choosing project themes easier for **students and teammates in an educational context**.
 
-First, run the development server:
+The platform ensures that **each theme can only be selected once** — when a student chooses a theme, it becomes unavailable to others. An **Admin Dashboard** allows supervisors or teachers to monitor selections and student data in real time.
+
+---
+
+## 🚀 Features
+
+### 👩‍🎓 Student Side
+
+* Browse available project themes
+* Select **one unique theme** (locked after selection)
+* Real-time availability updates
+* Prevents duplicate theme selection
+* Simple and intuitive UI
+
+### 🛠️ Admin Dashboard
+
+* View all students and their selected themes
+* See unselected / available themes
+* Monitor assignment progress
+* Centralized data management
+
+---
+
+## 🧠 Use Case
+
+This project is designed for:
+
+* University courses
+* Group projects
+* Hackathons
+* Academic assignments
+
+It eliminates conflicts by ensuring **fair theme distribution** among students.
+
+---
+
+## 🏗️ Tech Stack
+
+* **Next.js** 
+* **TypeScript** (optional but recommended)
+* **Database** (Supabase / PostgreSQL )
+* **Tailwind CSS / CSS Modules**
+
+---
+
+
+
+## 🔐 Theme Locking Logic
+
+* Each theme has a `status` field (`available | selected`)
+* Once a student selects a theme:
+
+  * Theme status becomes `selected`
+  * Theme is locked for other users
+* Admin can view all selections in real time
+
+---
+
+## 📊 Admin Dashboard Overview
+
+The admin panel allows:
+
+* Viewing all registered students
+* Seeing selected themes per student
+* Identifying available and locked themes
+* Managing or resetting selections (optional)
+
+---
+
+## ⚙️ Environment Variables
+
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+DATABASE_URL=your_database_url```
+
+---
+
+## ▶️ Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔮 Future Improvements
 
-## Learn More
+* Theme reset by admin
+* Deadline-based locking
+* Notifications for students
+* Role-based permissions
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project was built for **educational collaboration** to simplify theme assignment and avoid conflicts.
 
-## Deploy on Vercel
+Feel free to improve or adapt it for your institution.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## This project is for **educational use**. You may modify and reuse it freely.
+
+---
+
+⭐ If this project helped you, feel free to give it a star!

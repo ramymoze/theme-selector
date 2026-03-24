@@ -32,71 +32,82 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-slate-50">
-      <div className="w-full max-w-md">
-        <div className="card fade-in bg-white shadow-lg border-slate-200">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-slate-900 mb-2">
-              Admin Access
-            </h1>
-            <p className="text-slate-500 text-sm">
-              Enter your password to continue
-            </p>
+    <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 1rem' }}>
+      
+      <div className="card fade-up" style={{ width: '100%', maxWidth: '420px', padding: '3rem 2.5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '3rem',
+            height: '3rem',
+            borderRadius: '1rem',
+            background: 'rgba(124,95,255,0.1)',
+            border: '1px solid rgba(124,95,255,0.25)',
+            marginBottom: '1.25rem',
+            color: 'var(--violet)'
+          }}>
+            <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter admin password"
-                className="input-field"
-                autoFocus
-                disabled={isLoading}
-              />
-            </div>
-
-            {error && (
-              <div className="error-message text-sm py-2 px-3">
-                {error}
-              </div>
-            )}
-
-            <button 
-              type="submit" 
-              disabled={isLoading}
-              className="btn-primary w-full py-3 flex items-center justify-center gap-2"
-            >
-              {isLoading ? (
-                <>
-                  <div className="spinner border-white/30 border-t-white"></div>
-                  <span>Verifying...</span>
-                </>
-              ) : (
-                <span>Login</span>
-              )}
-            </button>
-
-            <div className="text-center">
-              <a 
-                href="/" 
-                className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
-              >
-                ← Back to Theme Selection
-              </a>
-            </div>
-          </form>
-        </div>
-        
-        <div className="mt-6 text-center">
-          <p className="text-xs text-slate-400">
+          <h1 className="page-title" style={{ fontSize: '1.8rem' }}>Admin Access</h1>
+          <p className="page-subtitle" style={{ marginTop: '0.5rem' }}>
+            Enter your credentials to continue
           </p>
         </div>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div>
+            <label className="form-label">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter admin password"
+              className="input-field"
+              autoFocus
+              disabled={isLoading}
+            />
+          </div>
+
+          {error && (
+            <div className="alert alert-error">
+              <span style={{ flexShrink: 0 }}>
+                <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+              </span>
+              <span>{error}</span>
+            </div>
+          )}
+
+          <button 
+            type="submit" 
+            disabled={isLoading}
+            className="btn-primary"
+            style={{ marginTop: '0.5rem' }}
+          >
+            {isLoading ? (
+              <>
+                <div className="spinner"></div>
+                <span>Verifying…</span>
+              </>
+            ) : (
+              <span>Secure Login</span>
+            )}
+          </button>
+
+          <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+            <button 
+              type="button"
+              onClick={() => router.push('/')}
+              className="btn-admin"
+              style={{ background: 'transparent', border: 'none', padding: 0 }}
+            >
+              ← Back to Theme Selection
+            </button>
+          </div>
+        </form>
       </div>
+
     </div>
   );
 }

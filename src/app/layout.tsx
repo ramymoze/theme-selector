@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DevOps Theme Selection",
-  description: "Select your DevOps project theme for Group 1 or Group 2",
+  title: "Advanced Network Project — Theme Selection",
+  description: "Select your Advanced Network project theme for Group 1 or Group 2",
 };
 
 export default function RootLayout({

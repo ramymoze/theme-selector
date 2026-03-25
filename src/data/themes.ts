@@ -6,20 +6,42 @@ export interface Theme {
 }
 
 export const themes: Theme[] = [
-  // Extensions IEEE 802.11
-  { id: '802.11a',  name: '802.11a — WifiS',                              category: 'Extensions IEEE 802.11' },
-  { id: '802.11b',  name: '802.11b — Wifi',                               category: 'Extensions IEEE 802.11' },
-  { id: '802.11c',  name: '802.11c — Pontage 802.11 vers 802.1d',        category: 'Extensions IEEE 802.11' },
-  { id: '802.11d',  name: '802.11d — Internationalisation',               category: 'Extensions IEEE 802.11' },
-  { id: '802.11e',  name: '802.11e — Amélioration de la qualité de service', category: 'Extensions IEEE 802.11' },
-  { id: '802.11f',  name: '802.11f — Itinérance (roaming)',               category: 'Extensions IEEE 802.11' },
-  { id: '802.11g',  name: '802.11g',                                       category: 'Extensions IEEE 802.11' },
-  { id: '802.11h',  name: '802.11h',                                       category: 'Extensions IEEE 802.11' },
-  { id: '802.11i',  name: '802.11i',                                       category: 'Extensions IEEE 802.11' },
-  { id: '802.11Ir', name: '802.11Ir',                                      category: 'Extensions IEEE 802.11' },
-  { id: '802.11j',  name: '802.11j',                                       category: 'Extensions IEEE 802.11' },
+  // Gestion
+  { id: 'gestion-0000', name: '0000 - Association request (requête d\'association)', category: 'Gestion' },
+  { id: 'gestion-0001', name: '0001 - Association response (réponse d\'association)', category: 'Gestion' },
+  { id: 'gestion-0010', name: '0010 - Reassociation request (requête ré-association)', category: 'Gestion' },
+  { id: 'gestion-0011', name: '0011 - Reassociation response (réponse de ré-association)', category: 'Gestion' },
+  { id: 'gestion-0100', name: '0100 - Probe request (requête d\'enquête)', category: 'Gestion' },
+  { id: 'gestion-0101', name: '0101 - Probe response (réponse d\'enquête)', category: 'Gestion' },
+  { id: 'gestion-0110-0111', name: '0110-0111 - Reserved (réservé)', category: 'Gestion' },
+  { id: 'gestion-1000', name: '1000 - Beacon (balise)', category: 'Gestion' },
+  { id: 'gestion-1001', name: '1001 - Announcement traffic indication message (ATIM)', category: 'Gestion' },
+  { id: 'gestion-1010', name: '1010 - Disassociation (désassociation)', category: 'Gestion' },
+  { id: 'gestion-1011', name: '1011 - Authentication (authentification)', category: 'Gestion' },
+  { id: 'gestion-1100', name: '1100 - Deauthentication (désauthentification)', category: 'Gestion' },
+  { id: 'gestion-1101-1111', name: '1101-1111 - Reserved (réservé)', category: 'Gestion' },
+
+  // Contrôle
+  { id: 'controle-0000-1001', name: '0000-1001 - Reserved (réservé)', category: 'Contrôle' },
+  { id: 'controle-1010', name: '1010 - Power Save (PS)-Poll (économie d\'énergie)', category: 'Contrôle' },
+  { id: 'controle-1011', name: '1011 - Request To Send (RTS)', category: 'Contrôle' },
+  { id: 'controle-1100', name: '1100 - Clear To Send (CTS)', category: 'Contrôle' },
+  { id: 'controle-1101', name: '1101 - ACK', category: 'Contrôle' },
+  { id: 'controle-1110', name: '1110 - Contention Free (CF)-end', category: 'Contrôle' },
+  { id: 'controle-1111', name: '1111 - CF-end + CF-ACK', category: 'Contrôle' },
+
+  // Données
+  { id: 'donnees-0000', name: '0000 - Data (données)', category: 'Données' },
+  { id: 'donnees-0001', name: '0001 - Data (données) + CF-Ack', category: 'Données' },
+  { id: 'donnees-0010', name: '0010 - Data (données) + CF-Poll', category: 'Données' },
+  { id: 'donnees-0011', name: '0011 - Data (données) + CF-Ack+CF-Poll', category: 'Données' },
+  { id: 'donnees-0100', name: '0100 - Null function (no Data (données))', category: 'Données' },
+  { id: 'donnees-0101', name: '0101 - CF-Ack', category: 'Données' },
+  { id: 'donnees-0110', name: '0110 - CF-Poll', category: 'Données' },
 ];
 
 export const categories = [
-  'Extensions IEEE 802.11',
+  'Gestion',
+  'Contrôle',
+  'Données',
 ];

@@ -110,7 +110,7 @@ Feel free to improve or adapt it for your institution.
 
 ---
 
-## This project is for **educational use**. You may modify and reuse it freely.
+## This project is for **educational use**. You may modify and reuse it freely. , the passcode for the admin is hardcoded in the codebase
 
 ---
 

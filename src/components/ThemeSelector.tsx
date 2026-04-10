@@ -49,11 +49,9 @@ export default function ThemeSelector() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [miniGroupSize]);
 
-  const takenThemesByCurrentGroup = submissions
-    .filter(sub => sub.group_number === group)
-    .map(sub => sub.theme_id);
+  const takenThemes = submissions.map(sub => sub.theme_id);
 
-  const isThemeAvailable = (themeId: string) => !takenThemesByCurrentGroup.includes(themeId);
+  const isThemeAvailable = (themeId: string) => !takenThemes.includes(themeId);
 
   const handleMemberChange = (index: number, value: string) => {
     const newMembers = [...members];
@@ -82,12 +80,10 @@ export default function ThemeSelector() {
     }
 
     const { data: currentSubmissions } = await supabase.from('submissions').select('*');
-    const takenBySameGroup = (currentSubmissions as Submission[])
-      ?.filter(sub => sub.group_number === group)
-      .map(sub => sub.theme_id) || [];
+    const takenThemes = (currentSubmissions as Submission[])?.map(sub => sub.theme_id) || [];
 
-    if (takenBySameGroup.includes(selectedTheme)) {
-      setError(`This theme was just taken by another team in Group ${group}. Please choose a different one.`);
+    if (takenThemes.includes(selectedTheme)) {
+      setError(`This theme was just taken by another team. Please choose a different one.`);
       setIsSubmitting(false);
       loadSubmissions();
       return;
@@ -305,7 +301,7 @@ export default function ThemeSelector() {
         color: 'var(--text-muted)',
         textAlign: 'center',
       }}>
-        Group 1 themes are exclusive per team · Group 2 may freely choose any theme
+        Themes are globally exclusive across all groups
       </p>
     </div>
   );

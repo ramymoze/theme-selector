@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const ADMIN_PASSWORD = 'F9x!Q2p@Lw7ZR4v#N8m$Tq3KH6d%S1r^Jc8BP7k&V3a*Xy5M';
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
 export default function AdminLogin() {
   const [password, setPassword] = useState('');

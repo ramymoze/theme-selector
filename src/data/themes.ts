@@ -7,12 +7,17 @@ export interface Theme {
 
 export const themes: Theme[] = [
   // Gestion
+  { id: 'gestion-0010', name: '0010 - Reassociation request (demande de réassociation)', category: 'Gestion' },
   { id: 'gestion-0101', name: '0101 - Probe response (réponse d\'enquête)', category: 'Gestion' },
   { id: 'gestion-1000', name: '1000 - Beacon (balise)', category: 'Gestion' },
+  { id: 'gestion-1001', name: '1001 - ATIM', category: 'Gestion' },
+  { id: 'gestion-1010', name: '1010 - Disassociation (désassociation)', category: 'Gestion' },
+  { id: 'gestion-1011', name: '1011 - Authentication (authentification)', category: 'Gestion' },
+  { id: 'gestion-1100', name: '1100 - Deauthentication (d\'authentification)', category: 'Gestion' },
 
   // Contrôle
   { id: 'controle-1010', name: '1010 - Power Save (PS)-Poll (économie d\'énergie)', category: 'Contrôle' },
-  { id: 'controle-1101', name: '1101 - ACK', category: 'Contrôle' },
+  { id: 'controle-1011', name: '1011 - Request to Send (RTS)', category: 'Contrôle' },
   { id: 'controle-1110', name: '1110 - Contention Free (CF)-end', category: 'Contrôle' },
   { id: 'controle-1111', name: '1111 - CF-end + CF-ACK', category: 'Contrôle' },
 

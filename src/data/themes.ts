@@ -18,6 +18,7 @@ export const themes: Theme[] = [
   // Contrôle
   { id: 'controle-1010', name: '1010 - Power Save (PS)-Poll (économie d\'énergie)', category: 'Contrôle' },
   { id: 'controle-1011', name: '1011 - Request to Send (RTS)', category: 'Contrôle' },
+  { id: 'controle-1100', name: '1100 - Clear to Send (CTS)', category: 'Contrôle' },
   { id: 'controle-1110', name: '1110 - Contention Free (CF)-end', category: 'Contrôle' },
   { id: 'controle-1111', name: '1111 - CF-end + CF-ACK', category: 'Contrôle' },
 
